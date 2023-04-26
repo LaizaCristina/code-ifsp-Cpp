@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+// [T0] - Faça um programa que receba várias idades
+// [T1] a quantidade de idades informada;
+// [T2] a média de todas as idades;
+// [T3] a soma de todas as idades;
+// [T4] a maior idade digitada;
+// [T5] a menor idade digitada.
+// [T6] Finalize digitando idade igual a zero.
+
+int main()
+
+{
+  const int N = 3;
+  int idade = 0;
+  int v = 0;
+  int soma = 0;
+  int mi = 0; // Maior Idade
+  int mei = 1000; //MEnor Idade
+
+  cout << "Informe as idades: " << endl << endl;
+  
+  do
+    {
+      cout << "Idade " << v + 1 << ": ";
+      cin >> idade;
+
+      if(idade > 0)
+      {
+      v = v + 1;
+      soma = idade + soma;
+
+      if (mi < idade) {
+          mi = idade;
+        }
+
+      if (mei > idade) {
+          mei = idade;
+        }
+      }
+    
+    } while (idade != 0);
+  
+  cout << "\nQuantidade de idades: " << v << endl;
+  cout << "Média das idades: " << soma / v << endl;
+  cout << "Soma das idades: " << soma << endl;
+  cout << "Maior idade: " << mi << endl;
+  cout << "Menor idade: " << mei << endl;
+} 
